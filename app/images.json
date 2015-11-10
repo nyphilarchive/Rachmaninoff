@@ -1,0 +1,56 @@
+[
+    {
+        "category": "photography",
+        "description": "Zweifellos Mondbetont",
+        "fullsrc": "full/Japan_img-0093.jpg",
+        "lowsrc": "thumbs/Japan_img-0093.jpg"
+    },
+    {
+        "category": "drawing",
+        "description": "Mehmet Dere",
+        "fullsrc": "full/Japan_img-0094.jpg",
+        "lowsrc": "thumbs/Japan_img-0094.jpg"
+    },
+    {
+        "category": "drawing",
+        "description": "Samantha Keely Smith",
+        "fullsrc": "full/Japan_img-0095.jpg",
+        "lowsrc": "thumbs/Japan_img-0095.jpg"
+    },
+    {
+        "category": "handmade",
+        "description": "Kumi Yamashita. Created with thread and nails.",
+        "fullsrc": "full/Japan_img-0096.jpg",
+        "lowsrc": "thumbs/Japan_img-0096.jpg"
+    },
+    {
+        "category": "photography",
+        "description": "Alexander Semenov. Underwater macro photography.",
+        "fullsrc": "full/Japan_img-0097.jpg",
+        "lowsrc": "thumbs/Japan_img-0097.jpg"
+    },
+    {
+        "category": "street art",
+        "description": "Borondo. Street Art.",
+        "fullsrc": "full/Japan_img-0098.jpg",
+        "lowsrc": "thumbs/Japan_img-0098.jpg"
+    },
+    {
+        "category": "photography",
+        "description": "Anka Zhuravleva",
+        "fullsrc": "full/Japan_img-0099.jpg",
+        "lowsrc": "thumbs/Japan_img-0099.jpg"
+    },
+    {
+        "category": "drawing",
+        "description": "Guy Denning. Sketches.",
+        "fullsrc": "full/Japan_img-0100.jpg",
+        "lowsrc": "thumbs/Japan_img-0100.jpg"
+    },
+    {
+        "category": "handmade",
+        "description": "Wolfgang Stiller. Matchstickmen.",
+        "fullsrc": "full/Japan_img-0101.jpg",
+        "lowsrc": "thumbs/Japan_img-0101.jpg"
+    }
+]
