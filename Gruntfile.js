@@ -70,7 +70,7 @@ module.exports = function (grunt) {
           files: [
             '<%= config.app %>/{,*/}*.html',
             '.tmp/styles/{,*/}*.css',
-            '<%= config.app %>/images/{,*/}*',
+            '<%= config.app %>/img/{,*/}*',
             '.tmp/scripts/{,*/}*.js'
           ],
           port: 9000,
@@ -222,7 +222,7 @@ module.exports = function (grunt) {
         src: [
           '<%= config.dist %>/scripts/{,*/}*.js',
           '<%= config.dist %>/styles/{,*/}*.css',
-          '<%= config.dist %>/images/{,*/}*.*',
+          '<%= config.dist %>/img/{,*/}*.*',
           '<%= config.dist %>/styles/fonts/{,*/}*.*',
           '<%= config.dist %>/*.{ico,png}'
         ]
@@ -244,7 +244,9 @@ module.exports = function (grunt) {
       options: {
         assetsDirs: [
           '<%= config.dist %>',
-          '<%= config.dist %>/images',
+          '<%= config.dist %>/img',
+          '<%= config.dist %>/full',
+          '<%= config.dist %>/thumbs',
           '<%= config.dist %>/styles'
         ]
       },
@@ -257,9 +259,19 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= config.app %>/images',
+          cwd: '<%= config.app %>/img',
           src: '{,*/}*.{gif,jpeg,jpg,png}',
-          dest: '<%= config.dist %>/images'
+          dest: '<%= config.dist %>/img'
+        },{
+          expand: true,
+          cwd: '<%= config.app %>/full',
+          src: '{,*/}*.{gif,jpeg,jpg,png}',
+          dest: '<%= config.dist %>/full'
+        },{
+          expand: true,
+          cwd: '<%= config.app %>/thumbs',
+          src: '{,*/}*.{gif,jpeg,jpg,png}',
+          dest: '<%= config.dist %>/thumbs'
         }]
       }
     },
@@ -268,9 +280,19 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           expand: true,
-          cwd: '<%= config.app %>/images',
+          cwd: '<%= config.app %>/img',
           src: '{,*/}*.svg',
-          dest: '<%= config.dist %>/images'
+          dest: '<%= config.dist %>/img'
+        },{
+          expand: true,
+          cwd: '<%= config.app %>/full',
+          src: '{,*/}*.svg',
+          dest: '<%= config.dist %>/full'
+        },{
+          expand: true,
+          cwd: '<%= config.app %>/thumbs',
+          src: '{,*/}*.svg',
+          dest: '<%= config.dist %>/thumbs'
         }]
       }
     },
@@ -333,8 +355,8 @@ module.exports = function (grunt) {
           cwd: '<%= config.app %>',
           dest: '<%= config.dist %>',
           src: [
-            '*.{ico,png,txt}',
-            'images/{,*/}*.webp',
+            '*.{ico,png,txt,json}',
+            'img/{,*/}*.webp',
             '{,*/}*.html',
             'styles/fonts/{,*/}*.*'
           ]
@@ -343,6 +365,12 @@ module.exports = function (grunt) {
           dot: true,
           cwd: '.',
           src: 'bower_components/bootstrap-sass/assets/fonts/bootstrap/*',
+          dest: '<%= config.dist %>'
+        }, {
+          expand: true,
+          dot: true,
+          cwd: '.',
+          src: 'bower_components/font-awesome/fonts/*',
           dest: '<%= config.dist %>'
         }]
       }

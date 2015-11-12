@@ -2,11 +2,12 @@
 <html class="no-js" lang="">
   <head>
     <meta charset="utf-8">
-    <title>rach</title>
+    <title>Rachmaninoff and the New York Philharmonic</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bower_components/font-awesome/scss/font-awesome.scss" />
+    <link rel="shortcut icon" href="http://nyphil.org/favicon.ico">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -30,14 +31,12 @@
     <![endif]-->
 
     
-    <div class="container">
+    <div class="container-fluid">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a data-toggle="modal" href="#aboutModal">About this Exhibit</a></li>
         </ul>
-        <h3 class="text-muted">rach</h3>
+       <h1 class="text-muted">RACHMANINOFF AND THE NEW YORK PHILHARMONIC</h1>
       </div>
 
       <!-- <div class="jumbotron">
@@ -48,34 +47,81 @@
  -->
       <div class="row marketing">
         <div class="col-lg-3">
-          <h4><a href="https://html5boilerplate.com/">HTML5 Boilerplate</a></h4>
-          <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
+         
+         <p><strong>Sergei Rachmaninoff’s</strong> relationship with the New York Philharmonic began during his first trip to America in 1909 and continued until just a few months before his death in 1943. It became one of the most unique and demanding partnerships in the Orchestra’s history. </p>
 
-          <h4><a href="http://libsass.org/">Sass</a></h4>
-          <p>Sass is a mature, stable, and powerful professional grade CSS extension language.</p>
+          <p>This exhibit illustrates a behind-the-scenes snapshot of that relationship and his 25 years in New York. As the archives reveal, the demands of such an extraordinary soloist were high. Rachmaninoff’s managers negotiated unheardof percentage fees for his appearances, and lucrative royalties for his compositions. He insisted never to be heard on the radio, so the Philahrmonic prepared different programs for their Sunday broadcast concerts during his visiting weeks. Tellingly, Rachmaninoff would appear mostly with guest conductors and the more accommodating music directors such as Josef Stransky and Walter Damrosch. The Philharmonic’s “star” personalities—Willem Mengelberg, Bruno Walter, and Gustav Mahler—collaborated with him only once; Arturo Toscanini and Artur Rodzinski did not engage him at all. </p>
+
+          <p>When the Philharmonic did play with Rachmaninoff, however, it was greeted by capacity audiences and attention given only to the most famous artists of the day. His closest rivals were Josef Hoffman, Vladimir Horowitz, and Fritz Kreisler, but Rachmaninoff exceeded their fame (and pay) as a soloist with his own compositions to showcase. As Olin Downes, music critic for The New York Times wrote in an article after the composer’s passing,  “Rachmaninoff was never anything but impregnably himself, and in himself was greatness.” </p>
+
           
 
-          <h4><a href="http://getbootstrap.com/">Bootstrap</a></h4>
-          <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
 
-          <h4><a href="http://modernizr.com/">Modernizr</a></h4>
-          <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
+        
+                <div class="sidebar-footer">
+                <a href="http://nyphil.org"><img src="img/NYPhil_Logo_sm.png" /></a>
+
+        
+          <p style="padding-top: 20px;">
+          <a href="http://archives.nyphil.org" target="_blank">
+            <img class="img-responsive" style="max-width: 300px;" src="img/levy_logo.png" />
+          </a>
+          </p>
+           <hr><p>
+          Copyright <script>document.write(new Date().getFullYear())</script> New York Philharmonic.<br>All rights reserved.
+         
+            <br>Contact Us: <a href="mailto:DigitalArchives@nyphil.org">DigitalArchives@nyphil.org</a>
+
+          </p>
+<a href="#" onclick="return fbs_click()" target="_blank" title="Share This on Facebook">
+          <i class="fa fa-facebook fa-lg"></i>
+        </a>
+
+          <a href="https://www.facebook.com/NYPhilArchive"></a>
+          <a class="twitter popup" href="http://twitter.com/share"><i class="fa fa-twitter fa-lg"></i></a>
+          <a href="mailto: ?subject=Rachmaninoff Exhibit - From the New York Philharmonic Archives&body=http://archives.nyphil.org/rachmaninoff"><i class="fa fa-envelope-o fa-lg"></i></a>
+        </div>
           
         </div>
         <div class="col-lg-9" id="ex1">
         </div>
       </div>
 
-      <div class="footer">
+     <!--  <div class="footer">
         <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+      </div> -->
+    </div>
+
+  <!-- About Modal -->
+  <div class="modal fade" id="aboutModal" >
+    <div class="modal-dialog" role="document">  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 style=""><span class="glyphicon glyphicon-info-sign"></span> About this Site</h4>
+        </div>
+        <div class="modal-body">
+         <p>This site was produced by The New York Philharmonic Archives as a companion to its physical exhibit in the Bruno Walter Gallery in David Geffen Hall in honor of the Rachmaninoff Festival, November 12-28, 2015. Learn more or purchase tickets <a href="http://nyphil.org/concerts-tickets/explore/1516/rachmaninoff-festival" target="_blank">here</a>.</p>
+
+         <p>These documents were sourced from the <a href="http://archives.nyphil.org">New York Philharmonic Leon Levy Digital Archives</a>.</p>
+
+          <p>Please feel free to contact the Archives at <a href="mailto:digitalarchives@nyphil.org">digitalarchives@nyphil.org</a>.</p>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+          <p>Not a member? <a href="#">Sign Up</a></p>
+          <p>Forgot <a href="#">Password?</a></p> -->
+        </div>
       </div>
     </div>
+  </div> 
     
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <!-- <script src="/bower_components/jquery/dist/jquery.js"></script> -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -93,7 +139,7 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
-    <script src="scripts/jquery.galereya.js"></script>
+    <script src="scripts/galereya.js"></script>
     <!-- endbuild -->
     
 

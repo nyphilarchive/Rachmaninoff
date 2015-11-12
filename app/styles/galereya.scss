@@ -321,7 +321,6 @@
         }
         .galereya-slider-close {
             top: 0;
-            left: 0;
 
             background-image: url('../img/galereya-close.png')
         }
@@ -421,6 +420,11 @@
 }
 
 /* Other devices and screens */
+
+
+
+
+
 @media only screen and (min-width: 601px) {
     .galereya-cell,
     .galereya-cell-img {

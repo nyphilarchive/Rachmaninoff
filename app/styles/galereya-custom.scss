@@ -1,5 +1,5 @@
 .galereya.ex1 {
-    max-width: 1400px;
+    max-width: 2500px;
     margin: auto;
 }
 
@@ -17,18 +17,18 @@
         transition: transform 0.3s ease-out;
     }
     .galereya.ex1 .galereya-cell:hover {
-        -webkit-transform: scale(1.5);
-        -moz-transform: scale(1.5);
-        -ms-transform: scale(1.5);
-        -o-transform: scale(1.5);
-        transform: scale(1.5);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transform: scale(1.2);
         -webkit-box-shadow: 0 0 2em #000;
         box-shadow: 0 0 2em #000;
     }
 
         .galereya.ex1 .galereya-cell-img { width: 80px; }
 
-        .galereya.ex1 .galereya-cell-desc { display: none; }
+        /*.galereya.ex1 .galereya-cell-desc { display: none; }*/
 
         .galereya.ex1 .galereya-cell-overlay {
             -webkit-box-shadow: none;
@@ -51,20 +51,28 @@
 .galereya-slider.ex1.opened { opacity: 100; }
 
     .galereya-slider.ex1 .galereya-slider-desc {
-        font-size: 12pt;
-
-        top: 0;
-        bottom: auto;
-        left: 0;
-
-        width: 200px;
+      /*  font-size: 12pt;*/
+      display: none;
+    /* bottom: auto; */
+    width: 50%;
+    /* left: 50px; */
+    text-align: left;
+    
+    .galereya-slider-desc-title {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
     }
 
     .galereya-slider.ex1 .galereya-slider-play,
     .galereya-slider.ex1 .galereya-slider-close {
-        top: auto;
-        bottom: 0;
+        top: 0;
+        right: 0;
     }
+    .galereya-slider.ex1 .galereya-slider-play{
+        display: none !important;
+    }
+
 
     .galereya-slider.ex1 .galereya-slider-slide {
         opacity: 100;
@@ -91,8 +99,29 @@
             box-shadow: 0 0 2em #000;
         }
 
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 400px) {
+/* Styles */
+        .galereya.ex1 .galereya-cell { width: 250px; }
+        .galereya.ex1 .galereya-cell-img { width: 250px; }
+        ul.nav {
+            display: none;
+        }
+        .opened {
+
+            .galereya-slider-desc{
+                width: 100% !important;
+            }
+        }
+}
 
 @media only screen and (min-width: 601px) {
-    .galereya.ex1 .galereya-cell { width: 150px; }
-        .galereya.ex1 .galereya-cell-img { width: 150px; }
+    .galereya.ex1 .galereya-cell { width: 250px; }
+        .galereya.ex1 .galereya-cell-img { width: 250px; }
+}
+
+@media only screen and (max-width : 800px) {
+/* Styles */
+        .galereya.ex1 .galereya-cell { width: 300px; }
+        .galereya.ex1 .galereya-cell-img { width: 300px; }
 }

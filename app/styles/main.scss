@@ -2,7 +2,26 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
+
+a, a:hover, a:visited {
+  color: #de3831;
+}
+
+
+.nav > li > a:hover {
+    background: none;
+
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+
+    background: #f6f6f6;
+    color: #212121;
+}
+
 
 .browsehappy {
   margin: 0.2em 0;
@@ -64,6 +83,17 @@ body {
   margin: 40px 0;
   p + h4 {
     margin-top: 28px;
+  }
+}
+
+.sidebar-footer {
+  text-align: center;
+  padding-top: 25px;
+
+    img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
