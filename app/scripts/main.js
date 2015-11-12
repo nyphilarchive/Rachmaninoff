@@ -798,34 +798,70 @@ $(function() {
     });
 });
 
+var zooming;
+
+// $(window).mousedown(function (e)
+// {  
+    
+//     if(zooming ==  1){
+       
+//     zooming =  0;
+//     }
+// });
+
 
 $(document).mousedown(function (e)
-{
-
+{  
+   if (zooming ==  0){
     var container = $(".galereya-slider-desc");
     
+    // if(zooming ==  1){
+    //    $(".current").trigger("zoom.destroy");
+    //     container.fadeToggle();
+    // zooming =  0;
+    // }
+    
+    
+ 
     if ( $( ".galereya-slider" ).hasClass( "opened" ) ) {
 
         if  (!container.is(e.target) // if the target of the click isn't the container...
             && container.has(e.target).length === 0  // ... nor a descendant of the container ...
             && e.target != $(".galereya-slider-nav")[0])  // ... nor a nav item!
+            
             {
              container.fadeToggle();
+             $(".current").zoom({url: "full/10.jpg"});
+             zooming =  1;
+            } 
         }
+    } else {
+        $(".current").trigger("zoom.destroy");
+        zooming = 0
     }
 });
 
- $(document).on('touchstart',function (e) {
+// $( ".galereya-slide-img" ).on( "click", function (e) {
+//   alert( 'something' );
+// });
 
-    var container = $(".galereya-slider-desc");
+// $('document.opened').mousedown(function (e) {
+//     alert('clicked');
+//     //
+// });
+
+
+//  $(document).on('touchstart',function (e) {
+
+//     var container = $(".galereya-slider-desc");
     
-    if ( $( ".galereya-slider" ).hasClass( "opened" ) ) {
+//     if ( $( ".galereya-slider" ).hasClass( "opened" ) ) {
 
-        if  (!container.is(e.target) // if the target of the click isn't the container...
-            && container.has(e.target).length === 0) // ... nor a descendant of the container
-            {
-             container.fadeToggle();
-        }
-    }
-});
+//         if  (!container.is(e.target) // if the target of the click isn't the container...
+//             && container.has(e.target).length === 0) // ... nor a descendant of the container
+//             {
+//              container.fadeToggle();
+//         }
+//     }
+// });
 
