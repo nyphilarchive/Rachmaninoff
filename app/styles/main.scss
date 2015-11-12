@@ -5,7 +5,7 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 @import "bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 
-a, a:hover, a:visited {
+a, a:hover, a:visited, a:active, a:link {
   color: #de3831;
 }
 
@@ -95,6 +95,10 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+#intro-hidden {
+    display: none;
 }
 
 /* Responsive: Portrait tablets and up */
