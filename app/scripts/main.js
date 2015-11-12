@@ -807,8 +807,10 @@ $(document).mousedown(function (e)
     if ( $( ".galereya-slider" ).hasClass( "opened" ) ) {
 
         if  (!container.is(e.target) // if the target of the click isn't the container...
-            && container.has(e.target).length === 0) // ... nor a descendant of the container
+            && container.has(e.target).length === 0
+            && e.target != $(".galereya-slider-nav")[0]) // ... nor a descendant of the container
             {
+             alert( $(e.target)[0] );
              container.fadeToggle();
         }
     }
