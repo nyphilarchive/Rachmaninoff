@@ -59,7 +59,14 @@
             load: function (next) {
                 next();
             },
-            onCellClick: function (e) {}
+            onCellClick: function (e) {
+             //   console.log();
+                // $(".galereya-slider-slide").zoom({url: "full/10.jpg",on: 'click'});
+
+               
+
+                
+            }
         };
 
         /**
@@ -93,7 +100,8 @@
             cellClick: function (e) {
                 if (!self.options.disableSliderOnClick) {
                     openSlider(parseInt(this.getAttribute('data-visibleIndex'), 10));
-               // $('galereya-slider-slide').zoom({url: 'full/10.jpg', on: 'grab', onZoomIn: function(){$('.galereya-slider-desc').fadeToggle();},  onZoomOut: function(){$('.galereya-slider-desc').fadeToggle();} });
+                //    console.log(this);
+               //$('.current').zoom({url: 'full/10.jpg', on: 'grab', onZoomIn: function(){$('.galereya-slider-desc').fadeToggle();},  onZoomOut: function(){$('.galereya-slider-desc').fadeToggle();} });
                // console.log('opened-2');
             }
 
@@ -102,15 +110,20 @@
             },
             sliderNextClick: function (e) {
                 changeSlide('next');
+
+                // enableZoom(); 
               //  $('galereya-slider-slide').trigger('zoom.destroy');
               //  $('galereya-slider-slide').zoom({url: 'full/10.jpg', on: 'grab', onZoomIn: function(){$('.galereya-slider-desc').fadeToggle();},  onZoomOut: function(){$('.galereya-slider-desc').fadeToggle();} });
              //   console.log('hitnext');
+            
             },
             sliderPrevClick: function (e) {
+                
                 changeSlide('prev');
             },
             sliderCloseClick: function () {
                 closeSlider();
+                
             },
             sliderPlayClick: function () {
                 if (!slideShowInterval) {
@@ -518,7 +531,6 @@
                     openSlider(visibleIndex);
 
                 }, 50);
-                
                 return;
             }
 
@@ -542,6 +554,7 @@
                 }
             });
 
+            
             isSliderOpened = true;
             changeSlide();
             updateNavigation();
@@ -598,6 +611,8 @@
             $img = $('<img class="galereya-slide-img" src="' + data[index].fullsrc + '" alt="' + data[index].title + '" />').load(function () {
                 $slide.html($img);
                 $img.css('margin-top', ($(window).height() - $img.height()) / 2);
+                enableZoom();
+
                 if (slideShowInterval) {
                     startSlideShow(); //resume slide show when an image is loaded
                 }
@@ -697,6 +712,7 @@
             //     .zoom();
            // $($current).zoom({url: data[index].fullsrc, on: 'click'});
             updateNavigation();
+            
             // $($slide).zoom({url: data[index].fullsrc, on: 'click'});
         };
 
@@ -761,11 +777,22 @@
          */
 
         var enableZoom = function() {
-            // console.log($slide);
-            //$($slide).zoom({url: data[index].fullsrc, on: 'grab', onZoomIn: function(){$('.galereya-slider-desc').fadeToggle();},  onZoomOut: function(){$('.galereya-slider-desc').fadeToggle();} });
-            // $(".current").zoom({url: 'full/10.jpg',on: 'click'});
-            // $('.current').zoom({url: 'full/10.jpg', on: 'click'});
-            //$('.galereya-slider').addClass('test');
+
+            $('.galereya-slide-img').wrap('<div class="panzoom"></div>');
+            
+            $('.galereya-slider-container').append('<div class="zoomControls"><button class="btn btn-default zoom-in"><span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span></button><button class="btn btn-default zoom-out"><span class="glyphicon glyphicon-zoom-out" aria-hidden="true"></span></button><button class="btn btn-default reset"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span></button></div>');
+              $('.panzoom').panzoom({
+                $zoomIn: $(".zoom-in"),
+                $zoomOut: $(".zoom-out"),
+                $reset: $(".reset"),
+                maxScale: 2,
+                duration: 800
+
+            });            
+        };
+
+        var disableZoom = function(){
+            $('.panzoom').panzoom("disable");
         };
 
         /**
