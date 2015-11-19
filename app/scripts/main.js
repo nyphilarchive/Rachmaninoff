@@ -62,7 +62,7 @@
             onCellClick: function (e) {
              //   console.log();
                 // $(".galereya-slider-slide").zoom({url: "full/10.jpg",on: 'click'});
-
+              
                
 
                 
@@ -122,7 +122,9 @@
                 changeSlide('prev');
             },
             sliderCloseClick: function () {
+               
                 closeSlider();
+
                 
             },
             sliderPlayClick: function () {
@@ -133,7 +135,13 @@
                 }
             },
             descFade: function() {
-                    $('.galereya-slider-desc').fadeToggle();
+                    
+                    var $divHeight = $('.galereya-slider-desc').outerHeight() *-1;
+                        if($('.galereya-slider-desc').css('bottom') == $divHeight + 'px') {
+                        $('.galereya-slider-desc').animate({'bottom': '0px'}, 500);
+                    } else {
+                        $('.galereya-slider-desc').animate({'bottom': $divHeight + 'px'}, 500);
+                    }
             },
             //zoomTrigger: function (e){
                     // $(this).zoom({url: 'full/10.jpg', on: 'grab' });
@@ -365,7 +373,6 @@
                 .append($sliderClose)
                 .append($sliderPlay);
             $(document.body).append($slider);
-
             self.show();
         };
 
@@ -568,10 +575,10 @@
          * Close slider
          */
         var closeSlider = function () {
-            if (!isSliderOpened) {
+        if (!isSliderOpened) {
                 return;
             }
-
+             
             $('html').css('overflow', htmlOverflow);
             $('body').css('overflow', bodyOverflow);
             $(window).scrollTop(scrollTop);
@@ -583,6 +590,7 @@
                     $sliderContainer.empty();
                     $slider.hide();
                     isSliderOpened = false;
+                
                 };
 
             $slider.removeClass('opened');
@@ -700,10 +708,11 @@
             $currentSlide = $slide;
             index = visibleCells[currentSlideIndex].getAttribute('data-index');
             $sliderDesc.empty().html('<div class="galereya-slider-desc-title">' + data[index].title + ' </div>' + data[index].description);
+            $sliderDesc.append('<div class="closeDesc"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>');
             $sliderDesc.toggle(Boolean(data[index].title || data[index].description));
             $currentImg = $slide.find('.galereya-slide-img');
             $currentImg.css('margin-top', ($(window).height() - $currentImg.height()) / 2);
-            
+             $('.closeDesc').click(Handlers.descFade);
            //console.log($('.galereya-slide-img').parent());
             // $($currentImg)
             //     .wrap('<span style="display:inline-block"></span>')
@@ -780,13 +789,13 @@
 
             $('.galereya-slide-img').wrap('<div class="panzoom"></div>');
             
-            $('.galereya-slider-container').append('<div class="zoomControls"><button class="btn btn-default zoom-in"><span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span></button><button class="btn btn-default zoom-out"><span class="glyphicon glyphicon-zoom-out" aria-hidden="true"></span></button><button class="btn btn-default reset"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span></button></div>');
+            $('.galereya-slider').append('<div class="zoomControls"><button class="btn btn-default zoom-in"><span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span></button><button class="btn btn-default zoom-out"><span class="glyphicon glyphicon-zoom-out" aria-hidden="true"></span></button><button class="btn btn-default reset"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span></button></div>');
               $('.panzoom').panzoom({
                 $zoomIn: $(".zoom-in"),
                 $zoomOut: $(".zoom-out"),
                 $reset: $(".reset"),
                 maxScale: 2,
-                duration: 800
+                duration: 400
 
             });            
         };
@@ -809,7 +818,8 @@
             $sliderPrev.click(Handlers.sliderPrevClick);
             $sliderClose.click(Handlers.sliderCloseClick);
             $sliderPlay.click(Handlers.sliderPlayClick);
-            $sliderContainer.click(Handlers.descFade);
+           
+
             //$sliderContainer.mouseenter(Handlers.zoomTrigger);
         };
 

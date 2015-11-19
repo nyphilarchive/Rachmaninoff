@@ -101,6 +101,17 @@ body {
     display: none;
 }
 
+.closeDesc {
+  position: absolute;
+  top: -24px;
+  right: 0px;
+      background: inherit;
+    height: 24px;
+    width: 25px;
+    text-align: center;
+    padding-top: 4px;
+}
+
 /* Responsive: Portrait tablets and up */
 // @media screen and (min-width: 768px) {
 //   .container {
