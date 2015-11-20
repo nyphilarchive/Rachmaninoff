@@ -60,12 +60,7 @@
                 next();
             },
             onCellClick: function (e) {
-             //   console.log();
-                // $(".galereya-slider-slide").zoom({url: "full/10.jpg",on: 'click'});
-              
-               
-
-                
+            $('.galereya-slider-desc').css('bottom','0px'); 
             }
         };
 
@@ -100,32 +95,19 @@
             cellClick: function (e) {
                 if (!self.options.disableSliderOnClick) {
                     openSlider(parseInt(this.getAttribute('data-visibleIndex'), 10));
-                //    console.log(this);
-               //$('.current').zoom({url: 'full/10.jpg', on: 'grab', onZoomIn: function(){$('.galereya-slider-desc').fadeToggle();},  onZoomOut: function(){$('.galereya-slider-desc').fadeToggle();} });
-               // console.log('opened-2');
-            }
-
+                }
                 self.options.onCellClick(e);
                 
             },
             sliderNextClick: function (e) {
                 changeSlide('next');
-
-                // enableZoom(); 
-              //  $('galereya-slider-slide').trigger('zoom.destroy');
-              //  $('galereya-slider-slide').zoom({url: 'full/10.jpg', on: 'grab', onZoomIn: function(){$('.galereya-slider-desc').fadeToggle();},  onZoomOut: function(){$('.galereya-slider-desc').fadeToggle();} });
-             //   console.log('hitnext');
-            
             },
             sliderPrevClick: function (e) {
                 
                 changeSlide('prev');
             },
             sliderCloseClick: function () {
-               
                 closeSlider();
-
-                
             },
             sliderPlayClick: function () {
                 if (!slideShowInterval) {
@@ -143,11 +125,7 @@
                         $('.galereya-slider-desc').animate({'bottom': $divHeight + 'px'}, 500);
                     }
             },
-            //zoomTrigger: function (e){
-                    // $(this).zoom({url: 'full/10.jpg', on: 'grab' });
-                    // console.log(4);
-                    //onZoomIn: function(){$('.galereya-slider-desc').fadeToggle();},  onZoomOut: function(){$('.galereya-slider-desc').fadeToggle();}
-            //},            
+                   
             bodyKeyDown: function (e) {
                 if (isSliderOpened) {
                     if (e.which === 37 || e.which === 39) {
@@ -632,8 +610,6 @@
             $slide.on('swiperight', Handlers.sliderPrevClick);
             $slide.on('swipeleft', Handlers.sliderNextClick);
             
-           // $($slide).zoom({url: data[index].fullsrc, on: 'click'});
-
             return $slide;
         };
 
@@ -644,8 +620,6 @@
         var changeSlide = function (direction) {
             direction = direction || 'next';
 
-            //$($slide).trigger('zoom.destroy'); 
-           // console.log('destroyed');
             //restore slide show interval, if slide show currently works.
             //Make it works correctly, when someone clicked next or prev button.
             if (slideShowInterval) {
@@ -700,8 +674,7 @@
                 }
                 changeSlideState($slide, 'current');
                 changeSlideState($currentSlide, 'next');
-              //  $($slide).zoom({url: data[index].fullsrc, on: 'click'});             
-               //     console.log(this.data[index].fullscr);
+              
             }
 
             currentSlideIndex = nextSlideIndex;
@@ -712,17 +685,8 @@
             $sliderDesc.toggle(Boolean(data[index].title || data[index].description));
             $currentImg = $slide.find('.galereya-slide-img');
             $currentImg.css('margin-top', ($(window).height() - $currentImg.height()) / 2);
-             $('.closeDesc').click(Handlers.descFade);
-           //console.log($('.galereya-slide-img').parent());
-            // $($currentImg)
-            //     .wrap('<span style="display:inline-block"></span>')
-            //     .css('display', 'block')
-            //     .parent()
-            //     .zoom();
-           // $($current).zoom({url: data[index].fullsrc, on: 'click'});
+            $('.closeDesc').click(Handlers.descFade);
             updateNavigation();
-            
-            // $($slide).zoom({url: data[index].fullsrc, on: 'click'});
         };
 
         /**
@@ -794,7 +758,8 @@
                 $zoomIn: $(".zoom-in"),
                 $zoomOut: $(".zoom-out"),
                 $reset: $(".reset"),
-                maxScale: 2,
+                maxScale: 4,
+                increment: 1,
                 duration: 400
 
             });            
@@ -889,73 +854,4 @@ $('#show-more').click(function(e){
     $('#intro-hidden').slideToggle();
     $(this).text( $(this).text() == 'Read More' ? "Show Less" : "Read More");
 });
-
-
-
-
-// $(window).mousedown(function (e)
-// {  
-    
-//     if(zooming ==  1){
-       
-//     zooming =  0;
-//     }
-// });
-
-
-
-// $(document).mousedown(function (e)
-// {  
-//    if (zooming ==  0){
-//     var container = $(".galereya-slider-desc");
-    
-//     // if(zooming ==  1){
-//     //    $(".current").trigger("zoom.destroy");
-//     //     container.fadeToggle();
-//     // zooming =  0;
-//     // }
-    
-    
- 
-//     if ( $( ".galereya-slider" ).hasClass( "opened" ) ) {
-
-//         if  (!container.is(e.target) // if the target of the click isn't the container...
-//             && container.has(e.target).length === 0  // ... nor a descendant of the container ...
-//             && e.target != $(".galereya-slider-nav")[0])  // ... nor a nav item!
-            
-//             {
-//              container.fadeToggle();
-//              $(".current").zoom({url: "full/10.jpg",on: 'click'});
-//              zooming =  1;
-//             } 
-//         }
-//     } else {
-//         $(".current").trigger("zoom.destroy");
-//         zooming = 0
-//     }
-// });
-
-// $( ".galereya-slide-img" ).on( "click", function (e) {
-//   alert( 'something' );
-// });
-
-// $('document.opened').mousedown(function (e) {
-//     alert('clicked');
-//     //
-// });
-
-
-//  $(document).on('touchstart',function (e) {
-
-//     var container = $(".galereya-slider-desc");
-    
-//     if ( $( ".galereya-slider" ).hasClass( "opened" ) ) {
-
-//         if  (!container.is(e.target) // if the target of the click isn't the container...
-//             && container.has(e.target).length === 0) // ... nor a descendant of the container
-//             {
-//              container.fadeToggle();
-//         }
-//     }
-// });
 
