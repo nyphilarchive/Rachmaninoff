@@ -1,9 +1,9 @@
-$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+$icon-font-path: "../fonts/";
 
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-@import "bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
+@import "bower_components/font-awesome/scss/font-awesome.scss";
 
 a, a:hover, a:visited, a:active, a:link {
   color: #de3831;

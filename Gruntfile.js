@@ -179,7 +179,15 @@ module.exports = function (grunt) {
           src: ['*.{scss,sass}'],
           dest: '.tmp/styles',
           ext: '.css'
-        }]
+        },
+        {
+          expand: true,
+          cwd: 'bower_components/font-awesome/scss',
+          src: ['*.{scss,sass}'],
+          dest: '.tmp/styles',
+          ext: '.css'
+        }
+        ]
       }
     },
 
@@ -223,7 +231,7 @@ module.exports = function (grunt) {
           '<%= config.dist %>/scripts/{,*/}*.js',
           '<%= config.dist %>/styles/{,*/}*.css',
           '<%= config.dist %>/img/{,*/}*.*',
-          '<%= config.dist %>/styles/fonts/{,*/}*.*',
+          '<%= config.dist %>/fonts/{,*/}*.*',
           '<%= config.dist %>/*.{ico,png}'
         ]
       }
@@ -358,18 +366,18 @@ module.exports = function (grunt) {
             '*.{ico,png,txt,json}',
             'img/{,*/}*.webp',
             '{,*/}*.html',
-            'styles/fonts/{,*/}*.*'
+            'fonts/{,*/}*.*'
           ]
         }, {
           expand: true,
           dot: true,
-          cwd: '.',
+          cwd: '<%= config.app %>',
           src: 'bower_components/bootstrap-sass/assets/fonts/bootstrap/*',
           dest: '<%= config.dist %>'
         }, {
           expand: true,
           dot: true,
-          cwd: '.',
+          cwd: '<%= config.app %>',
           src: 'bower_components/font-awesome/fonts/*',
           dest: '<%= config.dist %>'
         }]
